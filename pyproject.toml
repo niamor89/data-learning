@@ -1,0 +1,29 @@
+[project]
+name = "data-learning"
+version = "0.1.0"
+description = "Notes et exercices de reconversion data/IA"
+requires-python = ">=3.12"
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.6"]
+
+[tool.setuptools]
+packages = []
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+# E/W: PEP 8, F: erreurs (imports inutilisés...), I: tri des imports,
+# N: nommage PEP 8, UP: syntaxe Python moderne, B: pièges courants, ANN: annotations
+select = ["E", "W", "F", "I", "N", "UP", "B", "ANN"]
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = ["ANN"]
+
+[tool.pytest.ini_options]
+testpaths = ["."]
+addopts = "-q"
+pythonpath = ["."]
